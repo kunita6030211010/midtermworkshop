@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+<div class="container">
+            <h1>Class for this semester</h1> 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>subject id</th>
+                        <th>name</th>
+                        <th>room</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% classes.forEach(function(c){ %>
+                    <tr>
+                        <td scope="row">
+                                <a href="/classdetail/<%= c.subject_id %>"><%= c.subject_id %></a></td>
+                        <td><%= c.subject_name %></td>
+                        <td><%= c.room %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+         </div>
+    <% include ../partials/footer %>
